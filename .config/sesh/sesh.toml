@@ -18,5 +18,5 @@ startup_command = "nvim tmux.conf"
 
 [[session]]
 name = "alacritty config"
-path = "~/.config/alacritty/"
+path = "~/.config/alacritty"
 startup_command = "nvim alacritty.toml"
