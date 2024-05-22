@@ -71,7 +71,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 source ~/.aliases
 
 # Shell integrations
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$($(which brew) shellenv)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
@@ -79,6 +79,7 @@ eval "$(zoxide init --cmd cd zsh)"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home/
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export GEM_HOME=$HOME/.gem
 export EDITOR="nvim"
 
 # Change cursor shape for different vi modes.
