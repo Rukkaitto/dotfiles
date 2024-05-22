@@ -28,12 +28,12 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
+zinit light softmoth/zsh-vim-mode
 
 # Add snippets
 zinit snippet OMZP::brew
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::git
-zinit snippet OMZP::sudo
 
 # Load completions
 autoload -U compinit && compinit
@@ -52,6 +52,7 @@ HISTSIZE=5000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
+KEYTIMEOUT=1
 setopt appendhistory
 setopt sharehistory
 setopt hist_ignore_space
