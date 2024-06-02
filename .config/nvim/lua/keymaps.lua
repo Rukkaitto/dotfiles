@@ -17,10 +17,10 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 vim.keymap.set('n', '<C-z>', '<C-w>')
 
 -- Keybinds to go through Trouble list
-vim.keymap.set('n', '<C-n>', function()
-  require('trouble').next { skip_groups = true, jump = true }
-end, { desc = 'Go to next item in quickfix list' })
-
-vim.keymap.set('n', '<C-p>', function()
+vim.keymap.set('n', '<C-x>', function()
   require('trouble').prev { skip_groups = true, jump = true }
 end, { desc = 'Go to previous item in quickfix list' })
+
+vim.keymap.set('n', '<C-c>', function()
+  require('trouble').next { skip_groups = true, jump = true }
+end, { desc = 'Go to next item in quickfix list' })
