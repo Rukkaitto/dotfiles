@@ -17,5 +17,5 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 vim.keymap.set('n', '<C-z>', '<C-w>')
 
 -- Keybinds to go through quickfix list
-vim.keymap.set('n', '<C-l>', '<cmd>cnext<CR>', { desc = 'Go to next item in quickfix list' })
-vim.keymap.set('n', '<C-h>', '<cmd>cprev<CR>', { desc = 'Go to previous item in quickfix list' })
+vim.keymap.set('n', '<C-n>', '<cmd>cnext<CR>', { desc = 'Go to next item in quickfix list' })
+vim.keymap.set('n', '<C-p>', '<cmd>cprev<CR>', { desc = 'Go to previous item in quickfix list' })
