@@ -24,6 +24,23 @@ return { -- Fuzzy Finder (files, lsp, etc)
       },
     }
 
+    local actions = require 'telescope.actions'
+    local open_with_trouble = require('trouble.sources.telescope').open
+
+    -- Use this to add more results without clearing the trouble list
+    local add_to_trouble = require('trouble.sources.telescope').add
+
+    local telescope = require 'telescope'
+
+    telescope.setup {
+      defaults = {
+        mappings = {
+          i = { ['<c-t>'] = open_with_trouble },
+          n = { ['<c-t>'] = open_with_trouble },
+        },
+      },
+    }
+
     -- Enable Telescope extensions if they are installed
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')

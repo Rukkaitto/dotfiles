@@ -16,6 +16,11 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 -- Keybind to make split navigation easier.
 vim.keymap.set('n', '<C-z>', '<C-w>')
 
--- Keybinds to go through quickfix list
-vim.keymap.set('n', '<C-n>', '<cmd>cnext<CR>', { desc = 'Go to next item in quickfix list' })
-vim.keymap.set('n', '<C-p>', '<cmd>cprev<CR>', { desc = 'Go to previous item in quickfix list' })
+-- Keybinds to go through Trouble list
+vim.keymap.set('n', '<C-n>', function()
+  require('trouble').next { skip_groups = true, jump = true }
+end, { desc = 'Go to next item in quickfix list' })
+
+vim.keymap.set('n', '<C-p>', function()
+  require('trouble').prev { skip_groups = true, jump = true }
+end, { desc = 'Go to previous item in quickfix list' })
