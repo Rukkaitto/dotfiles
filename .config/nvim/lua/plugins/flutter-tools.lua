@@ -1,17 +1,48 @@
 return {
-  'akinsho/flutter-tools.nvim',
-  lazy = false,
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-    'stevearc/dressing.nvim',
-  },
-  config = function()
-    require('flutter-tools').setup {
-      lsp = {
-        color = {
-          enabled = true,
-        },
-      },
-    }
-  end,
+  -- 'akinsho/flutter-tools.nvim',
+  -- lazy = false,
+  -- dependencies = {
+  --   'nvim-lua/plenary.nvim',
+  --   'stevearc/dressing.nvim',
+  -- },
+  -- config = function()
+  --   require('flutter-tools').setup {
+  --     debugger = { -- integrate with nvim dap + install dart code debugger
+  --       enabled = true,
+  --       exception_breakpoints = {},
+  --       evaluate_to_string_in_debug_views = true,
+  --       register_configurations = function(paths)
+  --         require('dap').adapters.dart = {
+  --           type = 'executable',
+  --           command = '/Users/l.goudin/fvm/versions/3.27.1/bin/cache/dart-sdk',
+  --           args = { 'debug_adapter' },
+  --         }
+  --         require('dap').adapters.flutter = {
+  --           type = 'executable',
+  --           command = '/Users/l.goudin/fvm/versions/3.27.1/bin/flutter',
+  --           args = { 'debug_adapter' },
+  --         }
+  --         -- require('dap').configurations.dart = {
+  --         --   {
+  --         --     type = 'flutter',
+  --         --     request = 'launch',
+  --         --     name = 'Launch flutter',
+  --         --     dartSdkPath = '/Users/l.goudin/fvm/versions/3.27.1/bin/cache/dart-sdk',
+  --         --     flutterSdkPath = '/Users/l.goudin/fvm/versions/3.27.1/bin/flutter',
+  --         --     program = 'lib/main.dart',
+  --         --     cwd = '${workspaceFolder}/apps/flutter_poker',
+  --         --   },
+  --         -- }
+  --       end,
+  --     },
+  --     root_patterns = { '.git', 'melos.yml' },
+  --     fvm = true,
+  --     lsp = {
+  --       settings = {
+  --         lineLength = vim.o.textwidth,
+  --         updateImportsOnRename = true,
+  --       },
+  --     },
+  --   }
+  -- end,
 }

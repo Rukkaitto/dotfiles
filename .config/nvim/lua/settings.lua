@@ -56,3 +56,6 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- Maximum width of text that is being inserted.
+vim.opt.textwidth = 120

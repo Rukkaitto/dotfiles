@@ -72,9 +72,9 @@ return { -- LSP Configuration & Plugins
         local client = vim.lsp.get_client_by_id(event.data.client_id)
 
         -- Disable semantic tokens for dartls (Dart LSP)
-        if client.name == 'dartls' then
-          client.server_capabilities.semanticTokensProvider = { full = false }
-        end
+        -- if client.name == 'dartls' then
+        --   client.server_capabilities.semanticTokensProvider = { full = false }
+        -- end
 
         -- The following two autocommands are used to highlight references of the
         -- word under your cursor when your cursor rests there for a little while.
@@ -103,12 +103,6 @@ return { -- LSP Configuration & Plugins
 
     -- Enable the following language servers
     local servers = {
-      rust_analyzer = {},
-
-      tsserver = {},
-
-      htmx = {},
-
       lua_ls = {
         settings = {
           Lua = {
@@ -117,6 +111,17 @@ return { -- LSP Configuration & Plugins
             },
           },
         },
+      },
+    }
+
+    require('lspconfig').dartls.setup {
+      cmd = { 'fvm', 'dart', 'language-server', '--protocol=lsp' },
+      init_options = {
+        closingLabels = true,
+        flutterOutline = true,
+        onlyAnalyzeProjectsWithOpenFiles = false,
+        outline = true,
+        suggestFromUnimportedLibraries = true,
       },
     }
 

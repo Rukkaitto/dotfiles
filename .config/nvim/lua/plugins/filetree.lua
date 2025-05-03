@@ -10,6 +10,13 @@ return {
     require('neo-tree').setup {
       window = {
         position = 'right',
+        auto_expand_width = true,
+      },
+      filesystem = {
+        follow_current_file = {
+          enabled = true,
+          leave_dirs_open = false,
+        },
       },
     }
 
