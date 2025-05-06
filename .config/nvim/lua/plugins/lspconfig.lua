@@ -114,17 +114,6 @@ return { -- LSP Configuration & Plugins
       },
     }
 
-    require('lspconfig').dartls.setup {
-      cmd = { 'fvm', 'dart', 'language-server', '--protocol=lsp' },
-      init_options = {
-        closingLabels = true,
-        flutterOutline = true,
-        onlyAnalyzeProjectsWithOpenFiles = false,
-        outline = true,
-        suggestFromUnimportedLibraries = true,
-      },
-    }
-
     -- Ensure the servers and tools above are installed
     require('mason').setup()
 

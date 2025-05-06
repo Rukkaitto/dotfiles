@@ -77,7 +77,7 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 # Exports
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home/
+export JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home/
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export GEM_HOME=$HOME/.gem

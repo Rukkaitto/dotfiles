@@ -1,3 +1,29 @@
 alias ls="ls --color"
 alias chromedev="open -na Google\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security --disable-site-isolation-trials"
 alias vps="ssh ubuntu@54.36.101.176"
+alias f="fvm flutter"
+alias d="fvm dart"
+alias flint='git status --porcelain=v1 apps/ packages/ | grep '\''\.dart$'\'' | awk '\''{print $NF}'\'' | xargs -S 1024 -P 0 -I {} sh -c '\''fvm dart fix --apply "{}" && fvm dart format "{}"'\'''
+alias melos="fvm dart pub global run melos"
+alias runner='fvm flutter pub run build_runner watch --delete-conflicting-outputs'
+alias builder='fvm flutter pub run build_runner build --delete-conflicting-outputs'
+alias melosbs='fvm flutter pub global run melos bs'
+alias melostest='fvm flutter pub global run melos test'
+alias melosanalyze='fvm flutter pub global run melos analyze'
+alias meloslanalyze='fvm flutter pub global run melos analyze-light'
+alias melosfix='fvm flutter pub global run melos analyze-fix'
+alias melosphrase='fvm flutter pub global run melos exec -c 1 --scope=l10n --flutter -- "phrase pull -t 1e48cb0ada4a5afd41f957e74f6fae4955b3e490311d4be652befc05a24fd503 && fvm flutter gen-l10n"'
+alias mowglyprod='./scripts/update_flavors.sh mowgly fr ios prod true'
+alias mowglystage='./scripts/update_flavors.sh mowgly fr ios stage true'
+alias dandroid='gh workflow run api_deploy_android.yml --repo betclicgroup/flutter-poker --ref $(git branch --show-current) -f environment=stage2'
+alias dmac='gh workflow run api_deploy_apple.yml --repo betclicgroup/flutter-poker --ref $(git branch --show-current) -f channel=mac -f environment=stage2'
+alias dmacP='gh workflow run api_deploy_apple.yml --repo betclicgroup/flutter-poker --ref $(git branch --show-current) -f channel=mac -f environment=prod'
+alias dios='gh workflow run api_deploy_apple.yml --repo betclicgroup/flutter-poker --ref $(git branch --show-current) -f channel=ios -f environment=stage2'
+alias dfmk='gh workflow run api_deploy_frameworks.yml --repo betclicgroup/flutter-poker --ref $(git branch --show-current) -f environment=stage2'
+alias dfmkP='gh workflow run api_deploy_frameworks.yml --repo betclicgroup/flutter-poker --ref $(git branch --show-current) -f environment=prod'
+alias dwindows='gh workflow run api_deploy_windows.yml --repo betclicgroup/flutter-poker --ref $(git branch --show-current) -f environment_switching_allowed=true -f environment=stage2'
+alias dwindowsP='gh workflow run api_deploy_windows.yml --repo betclicgroup/flutter-poker --ref $(git branch --show-current) -f environment_switching_allowed=false -f environment=prod'
+alias drelease='dmacP && dwindowsP && dframeworksP && dmac && dwindows && dframeworks'
+alias ddesktop='dmac && dwindows'
+alias dmobile='dandroid && dios'
+alias dall='dfmk && ddesktop'
