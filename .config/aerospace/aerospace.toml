@@ -93,6 +93,7 @@ on-window-detected = [
     { if = { app-id = 'com.microsoft.teams2' },        run = 'move-node-to-workspace A' },  # Teams
     { if = { app-id = 'com.anthropic.claudefordesktop' }, run = 'move-node-to-workspace S' },  # Claude
     { if = { app-id = 'com.microsoft.Outlook' },       run = 'move-node-to-workspace D' },  # Outlook
+    { if = { app-id = 'com.apple.finder' },            run = 'move-node-to-workspace F' },  # Finder
     { if = { app-id = 'org.keepassxc.keepassxc' },     run = ['layout floating'] },         # KeePassXC floats
 ]
 
