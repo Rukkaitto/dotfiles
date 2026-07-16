@@ -59,7 +59,7 @@ persistent-workspaces = ["Q", "W", "E", "R", "A", "S", "D", "F", "G"]
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 on-mode-changed = []
 
-focus-follows-mouse.enabled = false
+focus-follows-mouse.enabled = true
 
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
