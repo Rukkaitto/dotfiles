@@ -95,7 +95,6 @@ on-window-detected = [
     { if = { app-id = 'com.anthropic.claudefordesktop' }, run = 'move-node-to-workspace S' },  # Claude
     { if = { app-id = 'com.microsoft.Outlook' },       run = 'move-node-to-workspace D' },  # Outlook
     { if = { app-id = 'com.apple.finder' },            run = 'move-node-to-workspace F' },  # Finder
-    { if = { app-id = 'org.keepassxc.keepassxc' },     run = ['layout floating'] },         # KeePassXC floats
     # Catch-all: anything not matched above goes to the G scratch workspace.
     # Must stay LAST — the first matching callback wins and stops the rest.
     { if = 'true', run = 'move-node-to-workspace G' },
