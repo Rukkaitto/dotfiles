@@ -90,8 +90,8 @@ on-window-detected = [
     { if = { app-id = 'org.alacritty' },               run = 'move-node-to-workspace 3' },  # Alacritty
     { if = { app-id = 'com.figma.Desktop' },           run = 'move-node-to-workspace 4' },  # Figma
     { if = { app-id = 'com.microsoft.teams2' },        run = 'move-node-to-workspace A' },  # Teams
-    { if = { app-id = 'com.microsoft.Outlook' },       run = 'move-node-to-workspace S' },  # Outlook
-    { if = { app-id = 'com.anthropic.claudefordesktop' }, run = 'move-node-to-workspace D' },  # Claude
+    { if = { app-id = 'com.anthropic.claudefordesktop' }, run = 'move-node-to-workspace S' },  # Claude
+    { if = { app-id = 'com.microsoft.Outlook' },       run = 'move-node-to-workspace D' },  # Outlook
     { if = { app-id = 'org.keepassxc.keepassxc' },     run = ['layout floating'] },         # KeePassXC floats
 ]
 
@@ -179,14 +179,14 @@ on-window-detected = [
     alt-f = 'workspace F'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-    alt-shift-1 = 'move-node-to-workspace 1'
-    alt-shift-2 = 'move-node-to-workspace 2'
-    alt-shift-3 = 'move-node-to-workspace 3'
-    alt-shift-4 = 'move-node-to-workspace 4'
-    alt-shift-a = 'move-node-to-workspace A'
-    alt-shift-s = 'move-node-to-workspace S'
-    alt-shift-d = 'move-node-to-workspace D'
-    alt-shift-f = 'move-node-to-workspace F'
+    alt-shift-1 = 'move-node-to-workspace --focus-follows-window 1'
+    alt-shift-2 = 'move-node-to-workspace --focus-follows-window 2'
+    alt-shift-3 = 'move-node-to-workspace --focus-follows-window 3'
+    alt-shift-4 = 'move-node-to-workspace --focus-follows-window 4'
+    alt-shift-a = 'move-node-to-workspace --focus-follows-window A'
+    alt-shift-s = 'move-node-to-workspace --focus-follows-window S'
+    alt-shift-d = 'move-node-to-workspace --focus-follows-window D'
+    alt-shift-f = 'move-node-to-workspace --focus-follows-window F'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
