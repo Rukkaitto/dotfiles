@@ -51,7 +51,8 @@ automatically-unhide-macos-hidden-apps = false
 # This config option is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
 # External monitor (LS34A650U): Q W E R | Built-in laptop display: A S D F
-persistent-workspaces = ["Q", "W", "E", "R", "A", "S", "D", "F"]
+# G = catch-all / scratch workspace (unpinned; unassigned windows land here)
+persistent-workspaces = ["Q", "W", "E", "R", "A", "S", "D", "F", "G"]
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -95,6 +96,9 @@ on-window-detected = [
     { if = { app-id = 'com.microsoft.Outlook' },       run = 'move-node-to-workspace D' },  # Outlook
     { if = { app-id = 'com.apple.finder' },            run = 'move-node-to-workspace F' },  # Finder
     { if = { app-id = 'org.keepassxc.keepassxc' },     run = ['layout floating'] },         # KeePassXC floats
+    # Catch-all: anything not matched above goes to the G scratch workspace.
+    # Must stay LAST — the first matching callback wins and stops the rest.
+    { if = 'true', run = 'move-node-to-workspace G' },
 ]
 
 # Pin workspaces to monitors. Monitor names come from `aerospace list-monitors`.
@@ -179,6 +183,8 @@ on-window-detected = [
     alt-s = 'workspace S'
     alt-d = 'workspace D'
     alt-f = 'workspace F'
+    # Catch-all / scratch
+    alt-g = 'workspace G'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-q = 'move-node-to-workspace --focus-follows-window Q'
@@ -189,6 +195,7 @@ on-window-detected = [
     alt-shift-s = 'move-node-to-workspace --focus-follows-window S'
     alt-shift-d = 'move-node-to-workspace --focus-follows-window D'
     alt-shift-f = 'move-node-to-workspace --focus-follows-window F'
+    alt-shift-g = 'move-node-to-workspace --focus-follows-window G'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
