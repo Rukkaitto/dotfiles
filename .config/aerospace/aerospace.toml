@@ -50,8 +50,8 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config option is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-# External monitor (LS34A650U): 1 2 3 4 | Built-in laptop display: A S D F
-persistent-workspaces = ["1", "2", "3", "4", "A", "S", "D", "F"]
+# External monitor (LS34A650U): Q W E R | Built-in laptop display: A S D F
+persistent-workspaces = ["Q", "W", "E", "R", "A", "S", "D", "F"]
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -80,16 +80,16 @@ gaps.outer.top =        8
 gaps.outer.right =      8
 
 # Auto-place apps on launch. Bundle IDs from `aerospace list-apps`.
-# Dev tools land on the external monitor (1-4), comms on the laptop (A/S/D/F).
+# Dev tools land on the external monitor (Q/W/E/R), comms on the laptop (A/S/D/F).
 # Reshuffle the workspace targets to taste; run `aerospace list-apps` for more IDs.
 # See: https://nikitabobko.github.io/AeroSpace/guide#on-window-detected-callback
 on-window-detected = [
-    { if = { app-id = 'company.thebrowser.Browser' }, run = 'move-node-to-workspace 1' },  # Arc
-    { if = { app-id = 'com.microsoft.VSCode' },        run = 'move-node-to-workspace 2' },  # VS Code
-    { if = { app-id = 'com.apple.iphonesimulator' },   run = ['layout tiling', 'move-node-to-workspace 2'] },  # iOS Simulator (tiled, with VS Code)
-    { if = { app-id = 'com.example.flutterPoker' },    run = 'move-node-to-workspace 2' },  # Flutter Poker (with VS Code)
-    { if = { app-id = 'org.alacritty' },               run = 'move-node-to-workspace 3' },  # Alacritty
-    { if = { app-id = 'com.figma.Desktop' },           run = 'move-node-to-workspace 4' },  # Figma
+    { if = { app-id = 'company.thebrowser.Browser' }, run = 'move-node-to-workspace Q' },  # Arc
+    { if = { app-id = 'com.microsoft.VSCode' },        run = 'move-node-to-workspace W' },  # VS Code
+    { if = { app-id = 'com.apple.iphonesimulator' },   run = ['layout tiling', 'move-node-to-workspace W'] },  # iOS Simulator (tiled, with VS Code)
+    { if = { app-id = 'com.example.flutterPoker' },    run = 'move-node-to-workspace W' },  # Flutter Poker (with VS Code)
+    { if = { app-id = 'org.alacritty' },               run = 'move-node-to-workspace E' },  # Alacritty
+    { if = { app-id = 'com.figma.Desktop' },           run = 'move-node-to-workspace R' },  # Figma
     { if = { app-id = 'com.microsoft.teams2' },        run = 'move-node-to-workspace A' },  # Teams
     { if = { app-id = 'com.anthropic.claudefordesktop' }, run = 'move-node-to-workspace S' },  # Claude
     { if = { app-id = 'com.microsoft.Outlook' },       run = 'move-node-to-workspace D' },  # Outlook
@@ -100,10 +100,10 @@ on-window-detected = [
 # Pin workspaces to monitors. Monitor names come from `aerospace list-monitors`.
 # See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [workspace-to-monitor-force-assignment]
-    1 = 'LS34A650U'
-    2 = 'LS34A650U'
-    3 = 'LS34A650U'
-    4 = 'LS34A650U'
+    Q = 'LS34A650U'
+    W = 'LS34A650U'
+    E = 'LS34A650U'
+    R = 'LS34A650U'
     A = 'built-in'
     S = 'built-in'
     D = 'built-in'
@@ -170,10 +170,10 @@ on-window-detected = [
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
     # External monitor
-    alt-1 = 'workspace 1'
-    alt-2 = 'workspace 2'
-    alt-3 = 'workspace 3'
-    alt-4 = 'workspace 4'
+    alt-q = 'workspace Q'
+    alt-w = 'workspace W'
+    alt-e = 'workspace E'
+    alt-r = 'workspace R'
     # Built-in laptop display (home row)
     alt-a = 'workspace A'
     alt-s = 'workspace S'
@@ -181,10 +181,10 @@ on-window-detected = [
     alt-f = 'workspace F'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-    alt-shift-1 = 'move-node-to-workspace --focus-follows-window 1'
-    alt-shift-2 = 'move-node-to-workspace --focus-follows-window 2'
-    alt-shift-3 = 'move-node-to-workspace --focus-follows-window 3'
-    alt-shift-4 = 'move-node-to-workspace --focus-follows-window 4'
+    alt-shift-q = 'move-node-to-workspace --focus-follows-window Q'
+    alt-shift-w = 'move-node-to-workspace --focus-follows-window W'
+    alt-shift-e = 'move-node-to-workspace --focus-follows-window E'
+    alt-shift-r = 'move-node-to-workspace --focus-follows-window R'
     alt-shift-a = 'move-node-to-workspace --focus-follows-window A'
     alt-shift-s = 'move-node-to-workspace --focus-follows-window S'
     alt-shift-d = 'move-node-to-workspace --focus-follows-window D'
