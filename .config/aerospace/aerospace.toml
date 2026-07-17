@@ -54,7 +54,7 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config option is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-# External monitor (LS34A650U): Q W E R | Built-in laptop display: A S D F
+# External monitor: Q W E R | Built-in laptop display: A S D F
 # G = catch-all / scratch workspace (pinned to external; unassigned windows land here)
 persistent-workspaces = ["Q", "W", "E", "R", "A", "S", "D", "F", "G"]
 
@@ -114,12 +114,12 @@ on-window-detected = [
     S = 'built-in'
     D = 'built-in'
     F = 'built-in'
-    Q = '^(?!Built-in).*'
-    W = '^(?!Built-in).*'
-    E = '^(?!Built-in).*'
-    R = '^(?!Built-in).*'
+    Q = '^(?!built-in).*'
+    W = '^(?!built-in).*'
+    E = '^(?!built-in).*'
+    R = '^(?!built-in).*'
     # G lives on the external monitor (send a window there with alt-shift-g)
-    G = '^(?!Built-in).*'
+    G = '^(?!built-in).*'
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
