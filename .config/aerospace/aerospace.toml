@@ -107,10 +107,12 @@ on-window-detected = [
 # Pin workspaces to monitors. Monitor names come from `aerospace list-monitors`.
 # See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [workspace-to-monitor-force-assignment]
-    Q = 'LS34A650U'
-    W = 'LS34A650U'
-    E = 'LS34A650U'
-    R = 'LS34A650U'
+    # Whichever external monitor is connected (work Samsung or personal LG)
+    # gets the dev workspaces. First connected match wins.
+    Q = ['LS34A650U', 'LG ULTRAGEAR+']
+    W = ['LS34A650U', 'LG ULTRAGEAR+']
+    E = ['LS34A650U', 'LG ULTRAGEAR+']
+    R = ['LS34A650U', 'LG ULTRAGEAR+']
     A = 'built-in'
     S = 'built-in'
     D = 'built-in'
